@@ -10,7 +10,8 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   for(int i=0; i< (sizeof(analogPorts)/sizeof(analogPorts[0])); i++){
-    analogWrite(analogPorts[i],random(255));    //test value
-    delay(1000);
+    analogWrite(analogPorts[i],random(255)));    //test value
+    delay(200);
   }
+
 }
