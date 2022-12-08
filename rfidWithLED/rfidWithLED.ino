@@ -22,14 +22,14 @@ void setup()
   Serial.println("Approximate your card to the reader...");
   Serial.println();
 
-  pinMode(A0,OUTPUT);
+  pinMode(A0,OUTPUT); //solution works for one multi led, switch to shift registry for more than one
   pinMode(A1,OUTPUT);
   pinMode(A2,OUTPUT);
 }
 void loop() 
 {
-  lightsOn(0,0,0);
-  // Look for new cards
+  lightsOn(0,0,0); //sets hardcoded pins to change colour, switch to shift registry
+  // Look for new cards, this part is the neutral code
   if ( ! mfrc522.PICC_IsNewCardPresent()) 
   {
     return;
@@ -57,13 +57,14 @@ void loop()
   {
     Serial.println("Authorized access");
     Serial.println();
-    lightsOn(100,125,255);
+    lightsOn(100,125,255); //add all the authorised code here
     delay(3000);
+    //add an until, so that you can log out with the authorised card and go to netural mode
   }
  
  else   {
     Serial.println(" Access denied");
-    lightsOn(255,100,100);
+    lightsOn(255,100,100); //add all the unauthrised code here
     delay(3000);
   }
 } 
@@ -72,4 +73,4 @@ void lightsOn(int r,int g,int b){ //we have an anode not cathode, so port to 5v 
   analogWrite(A0,255-r);
   analogWrite(A1,255-g);
   analogWrite(A2,255-b);
-}
+} //change this function to work with the shift registry
