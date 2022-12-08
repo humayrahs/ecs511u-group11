@@ -1,6 +1,6 @@
-int pinR = 3; //change rgb analog pin for rg diffsed common cathode
-int pinG = 4;
-int pinB = 5;
+int pinR = 11; //change rgb analog pin for rg diffsed common cathode
+int pinG = 10;
+int pinB = 9;
 //as we will have 2 pins for eyes, turn this into an array/object at some point
 
 void setup() {
@@ -14,7 +14,7 @@ void loop() {
   // put your main code here, to run repeatedly:
   //init mode = 0(neut)
   //reference rfid system here so that mode can switch
-  rfidsys();
+  //rfidSys();
   switchMode(0);
 }
 
