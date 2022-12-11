@@ -6,11 +6,10 @@
 - connect breadboards of bulbs, rfid, sd card reader, speaker,
 - put in stuffed toy
 
-- add 2 servo if possible
-
 ### Done:
 - single led test
 - single rgb led test
 - double rgb led test
 - rfid setup
 - connecting rfid with one rgb bulb
+- added 2 servo
